@@ -22,11 +22,19 @@ def dec_para_bin(decimal):
 
 def bin_frac_para_dec(binario):
     binario = str(binario)
-    #Separa a string do binário em parte inteira e parte decimal.
+    #Separa a string do binário em parte inteira e parte fracionária.
     indice_separador = binario.index(".")
     bin_parte_inteira = binario[:indice_separador]
     bin_parte_decimal = binario[indice_separador:]
-    pass
+    #Utiliza a função já existente para converter a parte inteira do binário para decimal.
+    decimal_parte_inteira = bin_para_dec(bin_parte_inteira)
+    decimal_parte_fracional = 0
+    #Converte a parte fracionária do binário para decimal.
+    #Começa do indice 1 para ignorar o ponto.
+    for i, digito in enumerate(bin_parte_decimal[1:]):
+        decimal_parte_fracional += int(digito) * 2 ** (-(i + 1))
+    decimal = decimal_parte_inteira + decimal_parte_fracional
+    return decimal
 
 def main():
     print(bin_para_dec(1011))
