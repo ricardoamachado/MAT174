@@ -1,3 +1,4 @@
+#Aluno: Ricardo Augusto de Araújo Machado. T04 - 10:40 às 12:30.
 def bin_para_dec(binario):
     """Converte um número binário inteiro para decimal."""
     # Converte o numero binario para string de modo que seja possivel acessar cada dígito.
@@ -16,7 +17,7 @@ def dec_para_bin(decimal):
         return "0"
     while decimal > 0:
         resto = decimal % 2
-        # Concatena o dígito obtio na iteração atual com os dígitos já encontrados.
+        # Concatena o dígito obtido na iteração atual com os dígitos já encontrados.
         binario = str(resto) + binario
         decimal = decimal // 2
     return binario
@@ -40,13 +41,16 @@ def bin_frac_para_dec(binario):
 
 def dec_frac_para_bin(decimal):
     decimal = str(decimal)
+    # Separa a string do decimal em parte inteira e parte fracionária.
     indice_separador = decimal.index(".")
     dec_parte_inteira = decimal[:indice_separador]
     dec_parte_decimal = decimal[indice_separador:]
+    # Utiliza a função já existente para converter a parte inteira do decimal.
     bin_parte_inteira = dec_para_bin(dec_parte_inteira)
     bin_parte_decimal = ""
     decimal_parte_fracional = float(dec_parte_decimal)
     iteracao = 0
+    #Define maximo de iterações para evitar loop infinito.
     nmax_iteracoes = 20
     while decimal_parte_fracional > 0 and iteracao < nmax_iteracoes:
         decimal_parte_fracional *= 2
@@ -59,10 +63,6 @@ def dec_frac_para_bin(decimal):
     return bin_parte_inteira + bin_parte_decimal
 
 def main():
-    print(bin_para_dec(1011))
-    print(dec_para_bin(12))
-    bin_frac_para_dec(1010.110110)
-
     entrada = input("Digite um número\n")
     while True:
         try:
