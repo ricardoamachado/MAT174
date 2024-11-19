@@ -60,7 +60,7 @@ def dec_frac_para_bin(decimal):
         else:
             bin_parte_decimal += "0"
         iteracao += 1
-    return bin_parte_inteira + bin_parte_decimal
+    return bin_parte_inteira + '.' + bin_parte_decimal
 
 def main():
     entrada = input("Digite um número\n")
