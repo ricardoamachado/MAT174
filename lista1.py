@@ -1,4 +1,4 @@
-#Aluno: Ricardo Augusto de Araújo Machado. T04 - 10:40 às 12:30.
+#Aluno: Ricardo Augusto de Araújo Machado. - 10:40 às 12:30.
 def bin_para_dec(binario):
     """Converte um número binário inteiro para decimal."""
     # Converte o numero binario para string de modo que seja possivel acessar cada dígito.
