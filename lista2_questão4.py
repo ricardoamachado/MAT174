@@ -1,5 +1,4 @@
 #Aluno: Ricardo Augusto de Araújo Machado. - T03 - 10:40 às 12:30.
-import numpy as np
 def gauss_seidel(A,b,x0,precisao):
     """
     Entradas:
